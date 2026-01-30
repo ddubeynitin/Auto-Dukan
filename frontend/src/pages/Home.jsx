@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import CategoriesComponent from "../components/CategoriesComponent";
 import FeaturedProductComponent from "../components/FeaturedProductComponent";
 import OurServicesComponent from "../components/OurServicesComponent";
+import PromotionImageComponent from "../components/PromotionImageComponent";
 
 const Home = () => {
   const brands = [
@@ -58,7 +59,7 @@ const Home = () => {
       <Header />
 
       {/* Image Component */}
-      <div className=" bg-[url(images/img1.png)] w-full lg:h-130 h-35 bg-cover bg-center flex justify-start items-center"></div>
+      <div className=" bg-[url(/images/img1.png)] w-full lg:h-130 h-35 bg-cover bg-center flex justify-start items-center"></div>
 
       {/* search vehicle component*/}
       <div className="lg:w-100 h-100 mx-5 bg-white rounded-2xl p-5 static lg:absolute top-45 left-20 right-0">
@@ -70,7 +71,7 @@ const Home = () => {
           <select
             name="brand"
             id="brand"
-            className="w-full h-10 px-3 py-2 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange-200"
+            className="w-full h-10 px-3 py-2 appearance-none rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-orange-200"
           >
             <option value="">Select Car Brand</option>
             <option value="maruti">MARUTI</option>
@@ -226,25 +227,7 @@ const Home = () => {
       </div>
 
       {/* Download image */}
-      <div className="w-full lg:h-140 h-220 bg-white-200 relative -z-1 flex justify-center items-center ">
-        <div className="lg:w-[80%] w-full h-full flex justify-center items-center">
-          <div className="lg:w-full w-full lg:h-140 h-full lg:bg-[url('./images/poster2.jpg')] bg-[url('./images/poster2_vertical.jpg')] bg-cover bg-center">
-            {/* <img src="" className="w-[80%]" /> */}
-          </div>
-        </div>
-        <div className="absolute lg:right-100  lg:bottom-50 bottom-30 flex flex-col justify-center items-center gap-4">
-          <h1 className="lg:text-5xl text-center leading-15 w-60 text-5xl font-bebas text-orange-500">
-            Download AutoDukan App
-          </h1>
-          <p className="text-lg font-barlow font-bold w-80 text-center">
-            Choose and book a seamless car service experience and also get
-            exciting offers with the Autodukan App
-          </p>
-          <div>
-            <img src="./images/download.png" alt="" />
-          </div>
-        </div>
-      </div>
+      <PromotionImageComponent/>
 
       {/* Become a seller  */}
       <div className="w-full h-120 bg-linear-to-br from-orange-600 to-blue-800  overflow-hidden bg-red-400 flex justify-center items-center ">

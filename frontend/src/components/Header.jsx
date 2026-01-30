@@ -36,7 +36,7 @@ const Header = () => {
           <div className="w-full lg:flex justify-center items-center gap-4 p-2">
             <div className=" ">
               <img
-                src="images/logo.png"
+                src="/images/logo.png"
                 alt="logo"
                 className="lg:w-60  lg:h-15 h-12"
               />

@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="lg:w-[50%] lg:h-90 flex lg:justify-end justify-center items-center">
           <div className="w-[80%] lg:h-80 h-60 flex flex-col justify-center lg:items-start gap-5">
               <div className="h-15 w-60 ">
-                <img src="./images/logo.png" className="w-full h-full" alt="" />
+                <img src="/images/logo.png" className="w-full h-full" alt="" />
               </div>
               <p className="font-barlow text-[12px]">India's biggest online marketplace for car <br /> spare parts</p>
               <div className="flex gap-4 text-2xl text-blue-900">
