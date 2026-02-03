@@ -1,8 +1,10 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import ProductCardComponent from "./Cards/ProductCardComponent";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedProductComponent = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-full lg:h-140 h-90 overflow-hidden">
       <div className="w-full h-[25%] flex justify-around items-end">
@@ -10,7 +12,8 @@ const FeaturedProductComponent = () => {
           <p className="lg:text-4xl text-2xl text-black font-bebas">
             FEATURED PRODUCT LIST
           </p>
-          <button className="h-10 w-30  flex justify-center items-center gap-2 text-white font-bebas rounded-lg bg-orange-500">
+
+          <button onClick={() => { navigate('/featured-product')}} className="h-10 w-30  flex justify-center items-center gap-2 text-white font-bebas rounded-lg bg-orange-500">
             View all <FaArrowRight />
           </button>
         </div>
