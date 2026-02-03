@@ -8,8 +8,12 @@ import {
   FaMicrophone,
   FaSearch,
 } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+
+  const navigate = useNavigate();
+
   return (
     <header className="w-full lg:h-30 h-50">
         <div className="fixed bg-white flex justify-center items-center flex-col w-full z-50">
@@ -59,7 +63,7 @@ const Header = () => {
                 {" "}
                 <FaCrown className="text-orange-500" /> Prime
               </button>
-              <button className="w-30 h-8 border flex justify-center items-center border-orange-500 p-2 rounded-lg bg-orange-500 text-white">
+              <button onClick={() => { navigate('/login') }} className="w-30 h-8 border flex justify-center items-center border-orange-500 p-2 rounded-lg bg-orange-500 text-white">
                 Log In
               </button>
             </div>
