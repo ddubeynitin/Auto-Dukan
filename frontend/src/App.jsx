@@ -5,6 +5,8 @@ import ProductDetailsPage from './pages/ProductDetailsPage'
 import FeaturedProductPage from './pages/FeaturedProductPage'
 import VerifyOTP from './pages/VerifyOTP'
 import Login from './pages/Login'
+import Category from './pages/Category'
+import SubCategoryPage from './pages/SubCategoryPage'
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
         <Route path='/verify-otp' element={ <VerifyOTP/> } />
         <Route path='/product/:product_name' element={ <ProductDetailsPage/> } />
         <Route path='/featured-product' element={ <FeaturedProductPage/> } />
+        <Route path='/category' element={ <Category/> } />
+        <Route path='/subcategory' element={ <SubCategoryPage/> } />
       </Routes>
     </BrowserRouter>
   )

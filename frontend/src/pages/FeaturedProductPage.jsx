@@ -140,6 +140,8 @@ const FeaturedProductPage = () => {
   return (
     <>
       <Header />
+      <div className="h-120">
+
       <div className="w-full flex justify-center items-center">
         <div className="w-[85%] border-b pb-2">
           <div className="flex gap-3 justify- items-center">
@@ -151,8 +153,8 @@ const FeaturedProductPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-auto flex justify-center items-start pt-5">
         <div className="w-[85%] h-auto grid grid-cols-4 gap-5">
+      <div className="w-full h-auto flex justify-center items-start pt-5">
 
           {featuredProducts.map((product) => (
             <div className="w-75 h-80 border pb-5  border-gray-300 flex flex-col justify-center items-center gap-1 p-2 relative rounded-sm overflow-hidden">
@@ -166,7 +168,7 @@ const FeaturedProductPage = () => {
                 src={product.image}
                 alt=""
                 className="w-[75%] h-full bg-blend-darken"
-              />
+                />
             </div>
             <h1 className="font-barlow font-bold">{product.name}</h1>
             <h1 className="font-barlow font-bold text-orange-500">
@@ -184,6 +186,7 @@ const FeaturedProductPage = () => {
           
         </div>
       </div>
+     </div>
       <Footer />
     </>
   );

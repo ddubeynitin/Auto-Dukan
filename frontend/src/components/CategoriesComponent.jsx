@@ -1,7 +1,9 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const CategoriesComponent = () => {
+  const navigate = useNavigate();
   const categories = [
     {
       id: 1,
@@ -42,7 +44,7 @@ const CategoriesComponent = () => {
           <p className="lg:text-4xl text-2xl text-black font-bebas">
             SHOP BY CATEGORIES
           </p>
-          <button className="h-10 w-30  flex justify-center items-center gap-2 text-white font-bebas rounded-lg bg-orange-500">
+          <button onClick={() => { navigate('/category') }} className="h-10 w-30  flex justify-center items-center gap-2 text-white font-bebas rounded-lg bg-orange-500">
             View all <FaArrowRight />
           </button>
         </div>
@@ -53,16 +55,14 @@ const CategoriesComponent = () => {
           {categories.map((Category) => (
             <div
               key={Category.id}
-              className="w-50 shrink-0 p-10  border lg:w-45 h-45 rounded-2xl flex flex-col justify-center items-center border-gray-300 bg-white overflow-hidden shadow-sm  shadow-gray-400"
+              className="w-50 shrink-0 p-5  border lg:w-45 h-45 rounded-2xl flex flex-col justify-center items-center border-gray-300 bg-white overflow-hidden shadow-sm  shadow-gray-400"
             >
               <div className="w-full h-[80%] flex justify-center items-center p-2">
-                <img src={Category.image} className="w-full" />
+                <img src={Category.image} className="w-full h-full object-contain" />
               </div>
-              <div className="w-full h-10  text-center">
                 <p className="text-lg font-bebas p-2">
                   {Category.name.toUpperCase()}
                 </p>
-              </div>
             </div>
           ))}
         </div>
