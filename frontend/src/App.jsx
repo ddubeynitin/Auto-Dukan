@@ -18,7 +18,7 @@ const App = () => {
         <Route path='/product/:product_name' element={ <ProductDetailsPage/> } />
         <Route path='/featured-product' element={ <FeaturedProductPage/> } />
         <Route path='/category' element={ <Category/> } />
-        <Route path='/subcategory' element={ <SubCategoryPage/> } />
+        <Route path='/subcategory/:category_name' element={ <SubCategoryPage/> } />
       </Routes>
     </BrowserRouter>
   )

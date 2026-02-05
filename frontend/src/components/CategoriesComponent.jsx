@@ -55,6 +55,7 @@ const CategoriesComponent = () => {
           {categories.map((Category) => (
             <div
               key={Category.id}
+              onClick={() => { navigate(`/subcategory/${Category.name.toLowerCase()}`) }}
               className="w-50 shrink-0 p-5  border lg:w-45 h-45 rounded-2xl flex flex-col justify-center items-center border-gray-300 bg-white overflow-hidden shadow-sm  shadow-gray-400"
             >
               <div className="w-full h-[80%] flex justify-center items-center p-2">
