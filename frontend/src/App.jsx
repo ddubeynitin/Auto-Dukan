@@ -7,6 +7,7 @@ import VerifyOTP from './pages/VerifyOTP'
 import Login from './pages/Login'
 import Category from './pages/Category'
 import SubCategoryPage from './pages/SubCategoryPage'
+import CartPage from './pages/CartPage'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/featured-product' element={ <FeaturedProductPage/> } />
         <Route path='/category' element={ <Category/> } />
         <Route path='/subcategory/:category_name' element={ <SubCategoryPage/> } />
+        <Route path='/cart' element={ <CartPage/> } />
       </Routes>
     </BrowserRouter>
   )

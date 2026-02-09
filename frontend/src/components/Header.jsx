@@ -31,7 +31,7 @@ const Header = () => {
             <div className="w-[20%] absolute lg:static top-10 right-5 flex justify-end items-center ">
               <div className=" flex h-8 justify-center items-center gap-5 pr-5">
                 <FaHeart />
-                <FaCartPlus />
+                <FaCartPlus onClick={() => { navigate('/cart') }}/>
                 <FaCar />
               </div>
             </div>
