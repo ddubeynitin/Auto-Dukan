@@ -8,6 +8,8 @@ import Login from './pages/Login'
 import Category from './pages/Category'
 import SubCategoryPage from './pages/SubCategoryPage'
 import CartPage from './pages/CartPage'
+import AdminLoginPage from './pages/admin/AdminLoginPage'
+import AdminDashboardPage from "./pages/admin/AdminDashboardPage";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
         <Route path='/category' element={ <Category/> } />
         <Route path='/subcategory/:category_name' element={ <SubCategoryPage/> } />
         <Route path='/cart' element={ <CartPage/> } />
+        <Route path='/admin/login' element={ <AdminLoginPage/> } />
+        <Route path='/admin/admin-dashboard' element={ <AdminDashboardPage/> } />
       </Routes>
     </BrowserRouter>
   )
