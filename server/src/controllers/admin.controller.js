@@ -1,5 +1,5 @@
 const Admin = require("../models/admin.model");
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 
 const adminLoginHandler = async (req, res) => {
   try {
@@ -32,13 +32,19 @@ const adminLoginHandler = async (req, res) => {
     }
 
     // Compare password
-    const isPasswordValid = await admin.matchPassword(password);
-    if (!isPasswordValid) {
+    if (admin.password !== password) {
       return res.status(401).json({
         success: false,
         message: "Invalid email or password",
       });
     }
+    // const isPasswordValid = await admin.matchPassword(password);
+    // if (!isPasswordValid) {
+    //   return res.status(401).json({
+    //     success: false,
+    //     message: "Invalid email or password",
+    //   });
+    // }
 
     // // Generate JWT token
     // const token = jwt.sign(

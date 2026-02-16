@@ -11,7 +11,12 @@ const AdminLoginPage = () => {
 
   const handleAdminLogin = async (e) => {
     e.preventDefault();
-    console.log("Admin Login Attempted:", { email, password });
+    console.log("Admin Login Attempted:");
+
+    if (!email || !password) {
+      alert("Please enter both email and password.");
+      return;
+    }
 
     try {
       const response = await axios.post(
@@ -76,8 +81,7 @@ const AdminLoginPage = () => {
               />
             </div>
             <button
-              type="submit"
-              onSubmit={handleAdminLogin}
+              onClick={handleAdminLogin}
               className="w-full py-2 font-barlow font-medium text-lg bg-orange-600 text-white rounded hover:bg-orange-700 transition duration-200"
             >
               Login
