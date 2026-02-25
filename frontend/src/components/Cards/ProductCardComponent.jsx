@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaHeart } from "react-icons/fa";
+import { FaArrowRight, FaRegHeart } from "react-icons/fa";
 
 const ProductCardComponent = () => {
   const featuredProducts = [
@@ -88,10 +88,10 @@ const ProductCardComponent = () => {
 
   return (
     <>
-      {featuredProducts.map((product) => (
-          <div onClick={() => window.open(`/product/${product.name}`, '_blank')} className="w-62 shrink-0 h-37 rounded-2xl bg-white flex flex-wrap  shadow-md shadow-gray-300 p-2">
+        {featuredProducts.map((product, index) => (
+          <div key={product.id + '-' + index} onClick={() => window.open(`/product/${product.name}`, '_blank')} className="w-59 shrink-0 h-37 rounded-2xl bg-white flex flex-wrap  shadow-md shadow-gray-300 p-2">
             <div className="w-full h-[20%] flex justify-between items-center">
-              <FaHeart className="text-2xl" />
+              <FaRegHeart className="text-2xl" />
               <p className=" bg-blue-800 w-25 text-sm rounded-2xl text-center text-white font-bebas">
                 {product.discount}
               </p>
@@ -101,7 +101,7 @@ const ProductCardComponent = () => {
                 <img src={product.image} alt="" srcset="" className="" />
               </div>
               <div className="w-[70%]">
-                <p className="font-bebas">{product.name.toUpperCase()}</p>
+                <p className="font-bebas truncate" >{product.name.toUpperCase()}</p>
                 <p className=" text-orange-500 font-sans">
                   Rs {product.price}{" "}
                   <span className=" line-through text-gray-400">

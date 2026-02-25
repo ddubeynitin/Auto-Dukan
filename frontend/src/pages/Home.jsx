@@ -8,6 +8,7 @@ import CategoriesComponent from "../components/CategoriesComponent";
 import FeaturedProductComponent from "../components/FeaturedProductComponent";
 import OurServicesComponent from "../components/OurServicesComponent";
 import PromotionImageComponent from "../components/PromotionImageComponent";
+import SliderImages from "../components/SliderImages";
 
 const Home = () => {
   const brands = [
@@ -58,11 +59,11 @@ const Home = () => {
     <>
       <Header />
 
-      {/* Image Component */}
-      <div className=" bg-[url(/images/img1.png)] w-full lg:h-130 h-35 bg-cover bg-center flex justify-start items-center"></div>
-
+      {/* Image Slider */}
+      {/* <div className=" bg-[url(/images/img1.png)] w-full lg:h-130 h-35 bg-cover bg-center flex justify-start items-center"></div> */}
+      <SliderImages/>
       {/* search vehicle component*/}
-      <div className="lg:w-100 h-100 mx-5 bg-white rounded-2xl p-5 static lg:absolute top-45 left-20 right-0">
+      <div  className="lg:w-100 h-100 mx-5 bg-white rounded-2xl p-5 static lg:absolute top-45 right-0 left-250 z-40">
         <div className="text-center text-2xl font-barlow  font-bold">
           {" "}
           <span className="text-orange-500">SEARCH</span> BY VEHICLE
