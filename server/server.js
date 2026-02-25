@@ -5,6 +5,7 @@ const { sendOTP } = require("./src/controllers/otp.controller");
 const { connectDB } = require("./src/config/db");
 require("dotenv").config();
 const adminRoutes = require("./src/routes/admin.routes");
+const sliderRoutes = require("./src/routes/slider.routes");
 
 const app = express();
 
@@ -16,7 +17,8 @@ connectDB();
 
 // Routes
 app.use("/api/admins", adminRoutes);
-app.use("/api/otp", sendOTP);
+app.use("/api/sliders", sliderRoutes);
+app.post("/api/otp/send", sendOTP);
 
 
 const PORT = process.env.PORT || 5000;
