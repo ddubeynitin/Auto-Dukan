@@ -193,17 +193,10 @@ const createAdmin = async (req, res) => {
     // Save admin to database
     await newAdmin.save();
 
-    // Generate JWT token
-    const token = jwt.sign(
-      { id: newAdmin._id, email: newAdmin.email, role: newAdmin.role },
-      process.env.JWT_SECRET || "your_jwt_secret_key",
-      { expiresIn: "7d" }
-    );
-
     return res.status(201).json({
       success: true,
       message: "Admin created successfully",
-      token,
+      token: null,
       admin: {
         id: newAdmin._id,
         name: newAdmin.name,

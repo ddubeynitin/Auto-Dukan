@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { MdGridView } from "react-icons/md";
 import { CiGrid2H } from "react-icons/ci";
+import { API_BASE_URL } from "../../config/api";
 
 const SliderManagementComponent = () => {
   const [SliderImages, setSliderImages] = useState(null);
@@ -24,7 +25,7 @@ const SliderManagementComponent = () => {
   const getSliderImages = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/sliders");
+      const res = await axios.get(`${API_BASE_URL}/api/sliders`);
       setSliderImages(res.data);
     } catch (err) {
       console.error("Failed to fetch sliders:", err);
@@ -80,7 +81,7 @@ const SliderManagementComponent = () => {
     try {
       setIsUploading(true);
       const response = await axios.post(
-        "http://localhost:5000/api/sliders/admin/slider-upload",
+        `${API_BASE_URL}/api/sliders/admin/slider-upload`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -112,7 +113,7 @@ const SliderManagementComponent = () => {
     try {
       setDeletingId(id);
       const res = await axios.delete(
-        `http://localhost:5000/api/sliders/admin/slider/${id}`,
+        `${API_BASE_URL}/api/sliders/admin/slider/${id}`,
       );
 
       if (res.status === 200) {

@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
+import { API_BASE_URL } from '../config/api';
 
 
 const SliderImages = () => {
@@ -12,7 +13,7 @@ const SliderImages = () => {
     const [slides, setSlides] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/sliders')
+    fetch(`${API_BASE_URL}/api/sliders`)
       .then(res => res.json())
       .then(data => {
         // Safe check: agar data array hai tabhi set karein

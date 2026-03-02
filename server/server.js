@@ -6,6 +6,8 @@ const { connectDB } = require("./src/config/db");
 require("dotenv").config();
 const adminRoutes = require("./src/routes/admin.routes");
 const sliderRoutes = require("./src/routes/slider.routes");
+const productRoutes = require("./src/routes/product.routes");
+const cartRoutes = require("./src/routes/cart.routes");
 
 const app = express();
 
@@ -18,6 +20,8 @@ connectDB();
 // Routes
 app.use("/api/admins", adminRoutes);
 app.use("/api/sliders", sliderRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
 app.post("/api/otp/send", sendOTP);
 
 

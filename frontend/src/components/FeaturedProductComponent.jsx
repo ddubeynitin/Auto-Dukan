@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import ProductCardComponent from "./Cards/ProductCardComponent";
 import { useNavigate } from "react-router-dom";
+import { getFeaturedProducts } from "../services/productService";
+import { addToCart } from "../services/cartService";
 
 const FeaturedProductComponent = () => {
   const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const data = await getFeaturedProducts(10);
+        setProducts(data);
+      } catch (error) {
+        console.error("Failed to load featured products:", error);
+      }
+    };
+
+    loadProducts();
+  }, []);
+
+  const handleAddToCart = async (productId) => {
+    try {
+      await addToCart({ productId, quantity: 1 });
+      alert("Item added to cart");
+    } catch (error) {
+      console.error("Failed to add item to cart:", error);
+      alert("Could not add item to cart");
+    }
+  };
+
   return (
     <div className="w-full lg:h-140 h-90 overflow-hidden">
       <div className="w-full h-[25%] flex justify-around items-end">
@@ -21,7 +48,7 @@ const FeaturedProductComponent = () => {
       <div className="w-full lg:h-[75%] flex justify-center items-start overflow-hidden">
         <div className="lg:w-[85%] h-[80%] flex flex-nowrap lg:grid lg:grid-cols-5 lg:grid-rows-2 grid-cols-3 lg:gap-5 overflow-x-auto pl-5 pr-5 gap-5">
           {/* Product Card */}
-          <ProductCardComponent/>
+          <ProductCardComponent products={products} onAddToCart={handleAddToCart} />
         </div>
       </div>
     </div>
