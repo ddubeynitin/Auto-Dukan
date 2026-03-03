@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import ProductDetailsPage from './pages/ProductDetailsPage'
 import FeaturedProductPage from './pages/FeaturedProductPage'
-import VerifyOTP from './pages/VerifyOTP'
 import Login from './pages/Login'
 import Category from './pages/Category'
 import SubCategoryPage from './pages/SubCategoryPage'
@@ -17,7 +16,6 @@ const App = () => {
       <Routes>
         <Route path='/' element={ <Home/> } />
         <Route path='/login' element={ <Login/> } />
-        <Route path='/verify-otp' element={ <VerifyOTP/> } />
         <Route path='/product/:slug' element={ <ProductDetailsPage/> } />
         <Route path='/featured-product' element={ <FeaturedProductPage/> } />
         <Route path='/category' element={ <Category/> } />

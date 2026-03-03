@@ -20,17 +20,17 @@ const Category = () => {
       image: "./images/categories/belt_and_chain_drive.png",
     },
     {
-      id: 3,
+      id: 4,
       name: "body parts",
       image: "./images/categories/body_parts.png",
     },
     {
-      id: 4,
+      id: 5,
       name: "brake system",
       image: "./images/categories/brake_system.png",
     },
     {
-      id: 5,
+      id: 6,
       name: "CAR accessories",
       image: "./images/categories/car_accessories.png",
     },

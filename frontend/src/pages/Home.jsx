@@ -13,15 +13,15 @@ import SliderImages from "../components/SliderImages";
 const Home = () => {
   const brands = [
     { id: 1, image: "./images/brands/OEM/Maruti.png" },
-    { id: 1, image: "./images/brands/OEM/Hyundai.png" },
-    { id: 1, image: "./images/brands/OEM/SKODA.png" },
-    { id: 1, image: "./images/brands/OEM/VW.png" },
-    { id: 1, image: "./images/brands/OEM/HONDA.png" },
-    { id: 1, image: "./images/brands/OEM/nissan.png" },
-    { id: 1, image: "./images/brands/OEM/FORD.png" },
-    { id: 1, image: "./images/brands/OEM/MAHINDRA.png" },
-    { id: 1, image: "./images/brands/OEM/TOYOTA.png" },
-    { id: 1, image: "./images/brands/OEM/Tata.png" },
+    { id: 2, image: "./images/brands/OEM/Hyundai.png" },
+    { id: 3, image: "./images/brands/OEM/SKODA.png" },
+    { id: 4, image: "./images/brands/OEM/VW.png" },
+    { id: 5, image: "./images/brands/OEM/HONDA.png" },
+    { id: 6, image: "./images/brands/OEM/nissan.png" },
+    { id: 7, image: "./images/brands/OEM/FORD.png" },
+    { id: 8, image: "./images/brands/OEM/MAHINDRA.png" },
+    { id: 9, image: "./images/brands/OEM/TOYOTA.png" },
+    { id: 10, image: "./images/brands/OEM/Tata.png" },
   ];
 
   const AboutCardData = [

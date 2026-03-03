@@ -50,9 +50,9 @@ const FeaturedProductPage = () => {
         </div>
         <div className="w-full flex justify-center items-start pt-5">
           <div className="w-[85%] h-auto grid grid-cols-4 gap-5">
-            {products.map((product) => (
+            {products.map((product, index) => (
               <div
-                key={product.id}
+                key={product._id || product.id || `${product.slug}-${index}`}
                 className="w-75 h-80 border pb-5 border-gray-300 flex flex-col justify-center items-center gap-1 p-2 relative rounded-sm overflow-hidden cursor-pointer"
                 onClick={() => navigate(`/product/${product.slug}`)}
               >
@@ -72,7 +72,7 @@ const FeaturedProductPage = () => {
                   className="w-full h-8 bg-orange-500 text-white font-barlow shadow shadow-black"
                   onClick={(event) => {
                     event.stopPropagation();
-                    handleAddToCart(product.id);
+                    handleAddToCart(product._id || product.id);
                   }}
                 >
                   ADD TO CART
